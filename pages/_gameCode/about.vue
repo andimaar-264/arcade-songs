@@ -29,7 +29,7 @@ export default defineComponent({
 
     <v-divider class="my-3" />
 
-    <h3>{{ $t('page.about.author') }}</h3>
+    <h3>{{ $t('Authors') }}</h3>
     <ul>
       <li>
         <a class="text-decoration-none" href="https://github.com/zetaraku" target="_blank">
@@ -44,6 +44,17 @@ export default defineComponent({
       <li>
         <a class="text-decoration-none" href="https://twitter.com/zetaraku" target="_blank">
           <v-icon small left color="#1da1f2">mdi-twitter</v-icon><span>@zetaraku</span>
+        </a>
+      </li>
+    </ul>
+
+    <br>
+
+    <h3>{{ $t('Editors for maimai Surabaya Version') }}</h3>
+    <ul>
+      <li>
+        <a class="text-decoration-none" href="https://www.youtube.com/@StayHotSH" target="_blank">
+          <v-icon small left color="#24292e">mdi-youtube</v-icon><span>sh</span>
         </a>
       </li>
     </ul>
@@ -297,7 +308,7 @@ export default defineComponent({
 
     <br>
 
-    <h3>{{ $t('page.about.updateRecord') }}</h3>
+    <!-- <h3>{{ $t('page.about.updateRecord') }}</h3>
     <v-timeline dense align-top class="mt-2">
       <v-timeline-item>
         <span class="font-weight-bold">2024/09/04 － v3.20 Update</span>
@@ -961,9 +972,9 @@ export default defineComponent({
           <li><i>This project was devoted to my friends ...</i></li>
         </ul>
       </v-timeline-item>
-    </v-timeline>
+    </v-timeline> -->
 
-    <br>
+    <!-- <br> -->
 
     <h3>{{ $t('page.about.disclaimer') }}</h3>
     <ul>
@@ -1117,7 +1128,7 @@ export default defineComponent({
           <strong>REFLEC BEAT</strong> or <strong>Konami Amusement Co., Ltd.</strong>
         </li>
       </template>
-      <li>
+      <!-- <li>
         <div v-if="!isDarkMode">
           This site contains a <strong><i>secret</i></strong>. Can you find it?<br>
           Read the sign and <strong>HOLD ON</strong> a second before you go into the forest!
@@ -1125,7 +1136,7 @@ export default defineComponent({
         <div v-else class="yellow--text">
           <strong>You found the <i>secret</i> :D!</strong> Isn't that kinda cool :)?
         </div>
-      </li>
+      </li> -->
     </ul>
   </v-container>
 </template>

@@ -58,7 +58,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <v-container class="fill-height pa-4 pa-sm-8">
+  <v-container class="fill-height pa-4 pa-sm-8" :class="{ 'dark-mode': isDarkMode }">
     <v-row class="align-center">
       <v-col cols="12" md="6" class="text-center" style="user-select: none;">
         <link v-if="toggle" rel="preload" :href="RICK_SHEET.imageUrl" as="image">
@@ -74,7 +74,7 @@ export default defineComponent({
           mdi-music-box-multiple
         </v-icon>
         <h1 class="mb-5">
-          <span>arcade-songs</span>
+          <span>maimai SBY Competition</span>
         </h1>
         <p v-text="$t('page.index.description')" />
       </v-col>
@@ -96,7 +96,7 @@ export default defineComponent({
               </v-icon>
             </v-list-item-icon>
             <v-list-item-title>
-              {{ site.gameTitle }}
+              {{ '12 Oktober 2024' }}
             </v-list-item-title>
             <v-list-item-icon class="SiteList__arrow">
               <v-icon>mdi-arrow-right</v-icon>
@@ -109,6 +109,28 @@ export default defineComponent({
 </template>
 
 <style lang="scss">
+// .fill-height {
+//   background-image: url("/assets/images/maxresdefault.jpg");
+//   background-size: cover;
+//   background-position: center;
+//   background-repeat: no-repeat;
+// }
+.fill-height {
+  background-image: url("@/assets/images/maxresdefault.jpg") !important;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--background-color) !important;
+  transition: background-color 0.3s ease;
+}
+
+:root {
+  --background-color: #fff; // Light mode background color
+}
+
+.dark-mode {
+  --background-color: #333; // Dark mode background color
+}
+
 .SiteList {
   &__arrow {
     opacity: 0;

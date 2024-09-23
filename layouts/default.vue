@@ -247,7 +247,7 @@ export default defineComponent({
               {{ $config.siteTitle }}
             </v-list-item-title>
             <v-list-item-subtitle>
-              {{ gameTitle ?? 'made by @zetaraku' }}
+              {{ gameTitle ?? 'made by @zetaraku, edited by @sh' }}
             </v-list-item-subtitle>
           </v-list-item-content>
         </v-toolbar-title>
@@ -276,7 +276,7 @@ export default defineComponent({
         <img :src="accessCounterUrl" alt="アクセスカウンター" width="70" height="12">
       </a>
       <span>
-        &copy; {{ new Date().getFullYear() }} / made by @zetaraku with &lt;3
+        &copy; {{ new Date().getFullYear() }} / made originally by @zetaraku and edited by @sh with &lt;3
       </span>
     </v-footer>
 
