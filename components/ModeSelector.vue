@@ -99,7 +99,7 @@ async function importSelectedSheets() {
         sm="6"
         class="d-flex justify-center align-center"
       >
-        <v-radio-group
+        <!-- <v-radio-group
           v-model="displayMode"
           row
         >
@@ -119,7 +119,7 @@ async function importSelectedSheets() {
               </span>
             </template>
           </v-radio>
-        </v-radio-group>
+        </v-radio-group> -->
       </v-col>
 
       <v-col

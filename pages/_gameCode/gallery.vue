@@ -47,7 +47,7 @@ const currentList: Ref<GalleryList | null> = ref(null);
 async function loadDefaultGallery() {
   currentLoadingStatus.value = LoadingStatus.LOADING;
   try {
-    const { dataSourceUrl } = sites.find((site) => site.gameCode === gameCode.value)!;
+    const {   l } = sites.find((site) => site.gameCode === gameCode.value)!;
 
     const response = await fetch(`${dataSourceUrl}/gallery.yaml`);
     const data = YAML.parse(await response.text());

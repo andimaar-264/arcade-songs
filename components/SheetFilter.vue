@@ -47,30 +47,30 @@ watch(() => filters.value.syncLevelValue, () => {
 }, { immediate: true });
 
 // Sync BPM Filter
-watch(() => filters.value.minBPM, () => {
-  if (filters.value.syncBPM) {
-    filters.value.maxBPM = filters.value.minBPM;
-  }
-});
-watch(() => filters.value.maxBPM, () => {
-  if (filters.value.syncBPM) {
-    filters.value.minBPM = filters.value.maxBPM;
-  }
-});
-watch(() => filters.value.syncBPM, () => {
-  if (filters.value.syncBPM) {
-    const bpm = filters.value.maxBPM ?? filters.value.minBPM;
-    filters.value.minBPM = bpm;
-    filters.value.maxBPM = bpm;
-  }
-}, { immediate: true });
+// watch(() => filters.value.minBPM, () => {
+//   if (filters.value.syncBPM) {
+//     filters.value.maxBPM = filters.value.minBPM;
+//   }
+// });
+// watch(() => filters.value.maxBPM, () => {
+//   if (filters.value.syncBPM) {
+//     filters.value.minBPM = filters.value.maxBPM;
+//   }
+// });
+// watch(() => filters.value.syncBPM, () => {
+//   if (filters.value.syncBPM) {
+//     const bpm = filters.value.maxBPM ?? filters.value.minBPM;
+//     filters.value.minBPM = bpm;
+//     filters.value.maxBPM = bpm;
+//   }
+// }, { immediate: true });
 </script>
 
 <template>
   <div>
     <v-row>
       <!-- Category -->
-      <v-col
+      <!-- <v-col
         v-if="filterOptions.categories != null"
         cols="12"
         md="6"
@@ -88,7 +88,7 @@ watch(() => filters.value.syncBPM, () => {
           deletable-chips
           clearable
         />
-      </v-col>
+      </v-col> -->
       <!-- Title -->
       <v-col
         v-if="filterOptions.titles != null"
@@ -195,7 +195,7 @@ watch(() => filters.value.syncBPM, () => {
         </div>
       </v-col>
       <!-- Version -->
-      <v-col
+      <!-- <v-col
         v-if="filterOptions.versions != null"
         cols="12"
         md="6"
@@ -213,7 +213,7 @@ watch(() => filters.value.syncBPM, () => {
           deletable-chips
           clearable
         />
-      </v-col>
+      </v-col> -->
       <!-- Type -->
       <v-col
         v-if="filterOptions.types != null"
@@ -235,7 +235,7 @@ watch(() => filters.value.syncBPM, () => {
         />
       </v-col>
       <!-- Artist -->
-      <v-col
+      <!-- <v-col
         v-if="filterOptions.artists != null"
         cols="12"
         md="6"
@@ -250,9 +250,9 @@ watch(() => filters.value.syncBPM, () => {
           persistent-placeholder
           clearable
         />
-      </v-col>
+      </v-col> -->
       <!-- Note Designer -->
-      <v-col
+      <!-- <v-col
         v-if="filterOptions.noteDesigners != null"
         cols="12"
         md="6"
@@ -270,9 +270,9 @@ watch(() => filters.value.syncBPM, () => {
           deletable-chips
           clearable
         />
-      </v-col>
+      </v-col> -->
       <!-- Region -->
-      <v-col
+      <!-- <v-col
         v-if="filterOptions.regions != null"
         cols="12"
         md="6"
@@ -310,9 +310,9 @@ watch(() => filters.value.syncBPM, () => {
             <span v-text="$t('sfc.SheetFilter.useRegionOverride')" />
           </v-tooltip>
         </div>
-      </v-col>
+      </v-col> -->
       <!-- BPM -->
-      <v-col
+      <!-- <v-col
         v-if="filterOptions.bpms != null"
         cols="12"
         md="6"
@@ -355,7 +355,7 @@ watch(() => filters.value.syncBPM, () => {
             clearable
           />
         </div>
-      </v-col>
+      </v-col> -->
       <!-- Super Filter -->
       <v-col
         v-if="filters.superFilter !== null"

@@ -115,13 +115,13 @@ export default defineComponent({
 //   background-position: center;
 //   background-repeat: no-repeat;
 // }
-.fill-height {
-  background-image: url("@/assets/images/maxresdefault.jpg") !important;
-  background-size: cover;
-  background-position: center;
-  background-color: var(--background-color) !important;
-  transition: background-color 0.3s ease;
-}
+// .fill-height {
+//   background-image: url("@/assets/images/maxresdefault.jpg") !important;
+//   background-size: cover;
+//   background-position: center;
+//   background-color: var(--background-color) !important;
+//   transition: background-color 0.3s ease;
+// }
 
 :root {
   --background-color: #fff; // Light mode background color

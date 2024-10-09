@@ -9,8 +9,8 @@ const filterTypes = {
   artist: 'string',
 
   versions: 'string[]',
-  minBPM: 'number',
-  maxBPM: 'number',
+  // minBPM: 'number',
+  // maxBPM: 'number',
   // syncBPM: 'boolean',
 
   types: 'string[]',
@@ -35,8 +35,8 @@ export function buildEmptyFilters(): Filters {
     artist: null,
 
     versions: [],
-    minBPM: null,
-    maxBPM: null,
+    // minBPM: null,
+    // maxBPM: null,
     syncBPM: null,
 
     types: [],
@@ -288,22 +288,22 @@ export function filterSheets(sheets: Sheet[], filters: Filters) {
       );
     }
   }
-  if (typeof filters.minBPM === 'number') {
-    result = result.filter(
-      (sheet) => (
-        sheet.bpm != null
-        && sheet.bpm >= filters.minBPM!
-      ),
-    );
-  }
-  if (typeof filters.maxBPM === 'number') {
-    result = result.filter(
-      (sheet) => (
-        sheet.bpm != null
-        && sheet.bpm <= filters.maxBPM!
-      ),
-    );
-  }
+  // if (typeof filters.minBPM === 'number') {
+  //   result = result.filter(
+  //     (sheet) => (
+  //       sheet.bpm != null
+  //       && sheet.bpm >= filters.minBPM!
+  //     ),
+  //   );
+  // }
+  // if (typeof filters.maxBPM === 'number') {
+  //   result = result.filter(
+  //     (sheet) => (
+  //       sheet.bpm != null
+  //       && sheet.bpm <= filters.maxBPM!
+  //     ),
+  //   );
+  // }
   if (filters.artist != null) {
     const normalizedArtist = filters.artist.toLowerCase();
     result = result.filter(

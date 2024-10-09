@@ -29,14 +29,14 @@ const errorMessage = computed(() => dataStore.currentLoadingErrorMessage);
     >
       {{ $t('description.loading') }}
     </v-alert>
-    <v-alert
+    <!-- <v-alert
       v-else-if="loadingStatus === LoadingStatus.LOADED"
       type="success"
       dense
       outlined
     >
       {{ $t('sfc.DataInfoBar.updateTime', { time: toLocalDateString(updateTime) }) }}
-    </v-alert>
+    </v-alert> -->
     <v-alert
       v-else-if="loadingStatus === LoadingStatus.ERROR"
       type="error"

@@ -121,7 +121,7 @@ export default defineComponent({
       class="my-6"
     />
 
-    <div
+    <!-- <div
       v-if="filterMode === 'my-list'"
       class="text-center py-8"
     >
@@ -132,13 +132,20 @@ export default defineComponent({
       >
         {{ $t('description.pickOneFromFilter') }}
       </v-btn>
-    </div>
+    </div> -->
 
     <!--
       The inner SheetDataGrid and SheetDataTable need to sync with each other.
       To ensure the SheetDataView always exists, we use v-show instead of v-if.
     -->
+    <!-- <SheetDataView
+      v-show="displayingSheets.length > 0"
+      :sheets="displayingSheets"
+      :display-mode="displayMode"
+      class="mt-4"
+    /> -->
     <SheetDataView
+      v-if="filterMode === 'my-list'"
       v-show="displayingSheets.length > 0"
       :sheets="displayingSheets"
       :display-mode="displayMode"
@@ -154,11 +161,11 @@ export default defineComponent({
       />
       <span
         v-if="filterMode === 'my-list'"
-        v-text="$t('description.myListEmpty')"
+        v-text="$t('description.filterResultEmpty')"
       />
     </div>
 
-    <div
+    <!-- <div
       v-if="filterMode === 'my-list' && selectedSheets.length > 0"
       class="text-center py-8"
     >
@@ -169,6 +176,6 @@ export default defineComponent({
       >
         {{ $t('description.clearMyList') }}
       </v-btn>
-    </div>
+    </div> -->
   </v-container>
 </template>

@@ -4,9 +4,9 @@ export type Filters = {
   artist: string | null;
 
   versions: string[];
-  minBPM: number | null;
-  maxBPM: number | null;
-  syncBPM: boolean | null;
+  // minBPM: number | null;
+  // maxBPM: number | null;
+  // syncBPM: boolean | null;
 
   types: string[];
   difficulties: string[];

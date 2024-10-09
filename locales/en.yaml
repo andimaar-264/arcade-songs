@@ -33,8 +33,8 @@ term:
   version: Version
   releaseDate: Release Date
   bpm: BPM
-  minBPM: Min. BPM
-  maxBPM: Max. BPM
+  # minBPM: Min. BPM
+  # maxBPM: Max. BPM
   sheets: Sheets
   type: Type
   difficulty: Difficulty

@@ -68,7 +68,7 @@ watch(isOpened, () => {
 <template>
   <v-dialog
     v-model="isOpened"
-    max-width="500px"
+    max-width="350px"
     :overlay-color="isDarkMode ? '#FFF8' : undefined"
   >
     <!-- This is explicitly added for the variables used in v-on to be exposed correctly -->
@@ -80,7 +80,7 @@ watch(isOpened, () => {
       <v-img
         :key="imageSrc"
         contain
-        class="grey lighten-2"
+        class="white"
         :class="{ 'rainbow-background': sheet.isSpecial }"
         :height="$vuetify.breakpoint.height < 750 ? '250px' : '350px'"
         :src="imageSrc"
@@ -109,7 +109,7 @@ watch(isOpened, () => {
           v-else
           class="d-flex justify-end align-end fill-height pa-3"
         >
-          <v-tooltip v-if="sheet.searchUrl !== null" top>
+          <!-- <v-tooltip v-if="sheet.searchUrl !== null" top>
             <template #activator="{ on }">
               <v-btn
                 :fab="$vuetify.breakpoint.xsOnly"
@@ -131,13 +131,13 @@ watch(isOpened, () => {
             <span>
               {{ sheet.searchUrl === undefined ? $t('sfc.SheetDialog.searchOnYouTube') : ':3' }}
             </span>
-          </v-tooltip>
+          </v-tooltip> -->
         </div>
 
         <img
           v-if="getTypeIconUrl(sheet.type) != null"
           :src="getTypeIconUrl(sheet.type)"
-          style="position: absolute; bottom: 10px; left: 15px;"
+          style="position: absolute; bottom: 10px; left: 120px;"
           alt=""
         >
       </v-img>
@@ -146,39 +146,37 @@ watch(isOpened, () => {
           <!-- Left column -->
           <div>
             <!-- Category -->
-            <h3
+            <!-- <h3
               class="text-truncate"
               style="margin-right: 80px;"
             >
               <span>{{ (sheet.category ?? 'N/A').replaceAll('|', '｜') }}</span>
-            </h3>
+            </h3> -->
 
             <!-- Title -->
             <v-tooltip top>
-              <template #activator="{ on }">
+              <template #activator="{ off }">
                 <h1
-                  class="py-2 text-truncate"
+                  class="py-2 text-truncate text-center"
                   :class="{ 'text--primary': isStatic }"
-                  style="cursor: pointer; user-select: all; margin-right: 42px;"
                   v-on="on"
                   @click="copyText(sheet.title);"
                 >
                   <span v-text="sheet.title" />
                 </h1>
               </template>
-              <span v-text="sheet.title" />
+              <!-- <span v-text="sheet.title" /> -->
             </v-tooltip>
 
             <!-- Artist -->
             <h4
-              class="pb-2 text-truncate"
-              style="margin-right: 42px;"
+              class="pb-2 text-truncate text-center"
             >
               <span>{{ sheet.artist ?? 'N/A' }}</span>
             </h4>
 
             <!-- Difficulty & Level -->
-            <h2 class="py-2 text-truncate">
+            <h2 class="py-2 text-truncate text-center">
               <img
                 v-if="getDifficultyIconUrl(sheet.difficulty) != null"
                 :src="getDifficultyIconUrl(sheet.difficulty)"
@@ -191,7 +189,7 @@ watch(isOpened, () => {
                 :class="{ 'text--primary': getDifficultyColor(sheet.difficulty) === 'unset' }"
                 :style="{ 'color': getDifficultyColor(sheet.difficulty) }"
               >{{ getDifficultyName(sheet.difficulty) }} {{ sheet.level }}</span>
-              <v-tooltip top>
+              <!-- <v-tooltip top>
                 <template #activator="{ on }">
                   <small
                     class="text--secondary"
@@ -202,27 +200,27 @@ watch(isOpened, () => {
                   </small>
                 </template>
                 <span v-text="$t('term.internalLevel')" />
-              </v-tooltip>
+              </v-tooltip> -->
             </h2>
 
             <!-- Note Designer -->
-            <h4 class="pt-2 text-truncate">
+            <!-- <h4 class="pt-2 text-truncate">
               <span v-text="$t('term.noteDesigner')" />:
               <span>{{ sheet.noteDesigner ?? 'N/A' }}</span>
-            </h4>
+            </h4> -->
 
             <!-- Release Date & Version -->
-            <h4 class="pt-2 text-truncate">
+            <!-- <h4 class="pt-2 text-truncate">
               <span v-text="$t('term.releaseDate')" />:
               <span>{{ sheet.releaseDate ?? '????-??-??' }}</span>
               <span>({{ sheet.version ?? 'N/A' }})</span>
-            </h4>
+            </h4> -->
 
             <!-- Comment -->
-            <h4 class="pt-2 text-truncate">
+            <!-- <h4 class="pt-2 text-truncate">
               <span v-text="$t('term.comment')" />:
               <span>{{ sheet.comment ?? 'N/A' }}</span>
-            </h4>
+            </h4> -->
           </div>
 
           <!-- Right column -->
@@ -231,23 +229,23 @@ watch(isOpened, () => {
             style="position: absolute; top: 0; right: 0;"
           >
             <!-- BPM -->
-            <h3 class="mb-2">
+            <!-- <h3 class="mb-2">
               <span v-text="$t('term.bpm')" />
               <span>{{ sheet.bpm != null ? sheet.bpm : '?' }}</span>
-            </h3>
+            </h3> -->
 
             <!-- Unlock needed -->
-            <v-tooltip v-if="sheet.isLocked" top>
+            <!-- <v-tooltip v-if="sheet.isLocked" top>
               <template #activator="{ on }">
                 <v-icon large class="pa-1" v-on="on">
                   mdi-lock
                 </v-icon>
               </template>
               <span v-text="$t('description.unlockNeeded')" />
-            </v-tooltip>
+            </v-tooltip> -->
 
             <!-- Unavailable in regions -->
-            <template v-for="{ region, name: regionName }, i in data.regions">
+            <!-- <template v-for="{ region, name: regionName }, i in data.regions">
               <v-tooltip
                 v-if="sheet.regions && sheet.regions[region] === false"
                 :key="i"
@@ -272,11 +270,11 @@ watch(isOpened, () => {
                   {{ $t('description.unavailableInRegion', { region: regionName }) }}
                 </span>
               </v-tooltip>
-            </template>
+            </template> -->
           </div>
         </div>
       </v-card-text>
-      <v-card-actions>
+      <!-- <v-card-actions>
         <v-spacer />
         <v-btn
           v-if="isDrawMode"
@@ -293,7 +291,7 @@ watch(isOpened, () => {
         >
           {{ isDrawMode ? $t('ui.ok') : $t('ui.close') }}
         </v-btn>
-      </v-card-actions>
+      </v-card-actions> -->
     </v-card>
 
     <v-snackbar v-model="copyHintOpened" :timeout="750">
