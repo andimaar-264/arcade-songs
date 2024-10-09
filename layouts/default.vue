@@ -227,6 +227,7 @@ export default defineComponent({
     >
       <v-app-bar-nav-icon
         :disabled="gameCode === undefined"
+        v-show="gameCode !== 'maimai'"
         @click="isDrawerOpened = !isDrawerOpened;"
       />
       <NuxtLink
@@ -244,10 +245,10 @@ export default defineComponent({
               :class="$vuetify.breakpoint.smAndUp ? 'text-h5' : 'text-h6'"
               style="line-height: 1.8rem;"
             >
-              {{ $config.siteTitle }}
+              {{ 'Surabaya maimai Battle!'}}
             </v-list-item-title>
             <v-list-item-subtitle>
-              {{ gameTitle ?? 'made by @zetaraku, edited by @sh' }}
+              {{ 'made by @zetaraku, edited by @sh' }}
             </v-list-item-subtitle>
           </v-list-item-content>
         </v-toolbar-title>
